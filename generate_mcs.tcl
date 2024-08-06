@@ -1,0 +1,2 @@
+write_cfgmem  -format mcs -size 16 -interface SPIx1 -loadbit {up 0x00000000 "./project_1/project_1.runs/impl_1/sfpga_top.bit" } -checksum -force -file "./project_1/project_1.runs/impl_1/sfpga_top.mcs"
+exit
