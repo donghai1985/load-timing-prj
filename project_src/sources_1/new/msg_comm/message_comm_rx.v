@@ -33,7 +33,7 @@ module message_comm_rx #(
     // comm info
     input    wire           MSG_CLK             ,
     input    wire           MSG_RX_FSX          ,
-    input    wire           MSG_RX              
+    input    wire           MSG_RX0             
 );
 
 
@@ -101,7 +101,7 @@ msg_comm_rx_ram msg_comm_rx_ram_inst(
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 always @(posedge MSG_CLK) begin
     if(MSG_RX_FSX)
-        comm_rx_data_temp <= {comm_rx_data_temp[14:0],MSG_RX};
+        comm_rx_data_temp <= {comm_rx_data_temp[14:0],MSG_RX0};
 end
 
 always @(posedge MSG_CLK) begin

@@ -82,7 +82,7 @@ parameter               SOURCE_PMT1                 = 16'h0001;
 parameter               SOURCE_PMT2                 = 16'h0002;
 parameter               SOURCE_PMT3                 = 16'h0003;
 parameter               SOURCE_TIMING               = 16'h0004;
-parameter   [8*20-1:0]  SFPGA_VERSION               = "PCG1_TimingS_v3.2   ";
+parameter   [8*20-1:0]  SFPGA_VERSION               = "PCG1_TimingS_v2.4   ";
 
 wire                    locked                      ;
 wire                    clk_50m                     ;
@@ -337,10 +337,10 @@ message_comm message_comm_inst(
     .MSG_TX_FSX                 ( FPGA_TO_SFPGA_RESERVE1        ),
     .MSG_TX                     ( FPGA_TO_SFPGA_RESERVE2        ),
     .MSG_RX_FSX                 ( FPGA_TO_SFPGA_RESERVE3        ),
-    .MSG_RX0                    ( FPGA_TO_SFPGA_RESERVE4        ),
-    .MSG_RX1                    ( FPGA_TO_SFPGA_RESERVE5        ),
-    .MSG_RX2                    ( FPGA_TO_SFPGA_RESERVE6        ),
-    .MSG_RX3                    ( FPGA_TO_SFPGA_RESERVE7        )
+    .MSG_RX0                    ( FPGA_TO_SFPGA_RESERVE4        )
+    // .MSG_RX1                    ( FPGA_TO_SFPGA_RESERVE5        ),
+    // .MSG_RX2                    ( FPGA_TO_SFPGA_RESERVE6        ),
+    // .MSG_RX3                    ( FPGA_TO_SFPGA_RESERVE7        )
 );
 
 

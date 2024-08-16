@@ -40,10 +40,10 @@ module message_comm(
 (*dont_touch = "true"*)    output   wire           MSG_TX_FSX          ,
 (*dont_touch = "true"*)    output   wire           MSG_TX              ,
 (*dont_touch = "true"*)    input    wire           MSG_RX_FSX          ,
-(*dont_touch = "true"*)    input    wire           MSG_RX0             ,
-(*dont_touch = "true"*)    input    wire           MSG_RX1             ,
-(*dont_touch = "true"*)    input    wire           MSG_RX2             ,
-(*dont_touch = "true"*)    input    wire           MSG_RX3             
+(*dont_touch = "true"*)    input    wire           MSG_RX0             
+// (*dont_touch = "true"*)    input    wire           MSG_RX1             ,
+// (*dont_touch = "true"*)    input    wire           MSG_RX2             ,
+// (*dont_touch = "true"*)    input    wire           MSG_RX3             
 );
 
 
@@ -65,17 +65,17 @@ message_comm_tx message_comm_tx_inst(
     .MSG_TX              ( MSG_TX               )
 );
 
-message_comm_x4_rx message_comm_rx_inst(
+message_comm_rx message_comm_rx_inst(
     .clk                 ( phy_rx_clk           ),
     .rst_n               ( rst_n                ),
     .msg_rx_data_vld_o   ( rd_data_vld_o        ),
     .msg_rx_data_o       ( rd_data_o            ),
     .MSG_CLK             ( MSG_CLK              ),
     .MSG_RX_FSX          ( MSG_RX_FSX           ),
-    .MSG_RX0             ( MSG_RX0              ),
-    .MSG_RX1             ( MSG_RX1              ),
-    .MSG_RX2             ( MSG_RX2              ),
-    .MSG_RX3             ( MSG_RX3              )
+    .MSG_RX0             ( MSG_RX0              )
+    // .MSG_RX1             ( MSG_RX1              ),
+    // .MSG_RX2             ( MSG_RX2              ),
+    // .MSG_RX3             ( MSG_RX3              )
 );
 
 endmodule

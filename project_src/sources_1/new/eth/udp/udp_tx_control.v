@@ -36,8 +36,8 @@ module udp_tx_control #(
     input    wire  [8:0]    cfg_load_status_i   ,
     input    wire           comm_ack_i          ,
     // slave tx data,to main PC
-    input    wire           rd_data_vld_i       ,
-    input    wire  [7:0]    rd_data_i           ,
+(*mark_debug = "true"*)    input    wire           rd_data_vld_i       ,
+(*mark_debug = "true"*)    input    wire  [7:0]    rd_data_i           ,
     // udp tx info
     output   wire           tx_start_en_o       ,
     output   wire  [15:0]   tx_byte_num_o       ,
@@ -80,7 +80,7 @@ reg                         slave_tx_sync       = 'd0;
 reg    [16-1:0]             slave_tx_cnt        = 'd0;
 reg    [16-1:0]             slave_tx_cnt_latch  = 'd0;
 
-(*mark_debug = "true"*)reg                         sfpga_comm_clear        = 'd0;
+reg                         sfpga_comm_clear        = 'd0;
 reg                         sfpga_comm_clear_wait   = 'd0;
 reg                         sfpga_comm_reset_d0     = 'd0;
 reg                         sfpga_comm_reset_d1     = 'd0;
@@ -100,15 +100,15 @@ wire                        tx_start_en_delay   ;
 (*mark_debug = "true"*)wire   [ARBITR_NUM-1:0]     arbitr_result       ;
 wire   [ 8-1:0]             slave_tx_dout       ;
 wire                        slave_tx_full       ;
-(*mark_debug = "true"*)wire                        slave_tx_empty      ;
+wire                        slave_tx_empty      ;
 wire                        sfpga_version_nege  ;
 wire                        sfpga_comm_reset_nege  ;
 wire                        sfpga_comm_reset_pose  ;
-(*mark_debug = "true"*)wire                        rd_data_vld_noclear ;
+wire                        rd_data_vld_noclear ;
 
 wire   [16-1:0]             tx_instruct_dout ;
 wire                        tx_instruct_full ;
-(*mark_debug = "true"*)wire                        tx_instruct_empty;
+wire                        tx_instruct_empty;
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 //////////////////////////////////////////////////////////////////////////////////
